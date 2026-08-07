@@ -2,6 +2,12 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Persosns.Entities", "Records.Persosns.Entities\Records.Persosns.Entities.csproj", "{D2360576-33D5-4B22-9809-E2DF814263C4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{AA0831E9-3588-4258-9EFE-AC7768F0299A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{05B6B236-988B-45A9-9148-D77B8E50B2D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{59C378C6-7A5A-4F89-8CD9-F2C0249ADE12}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

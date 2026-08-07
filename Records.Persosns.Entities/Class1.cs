@@ -1,6 +1,6 @@
 ﻿namespace Records.Persosns.Entities;
 
-// Prueba.
+// Prueba 2.
 public class Class1
 {
 }

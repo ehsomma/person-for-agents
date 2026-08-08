@@ -3,5 +3,17 @@
 // Prueba 3.
 public class Class1
 {
-    // cambio 7
+    #region Methods
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public string HelloWorld()
+    {
+        // cambio 7.
+        return "Hello World";
+    }
+
+    #endregion
 }

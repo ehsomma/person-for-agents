@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{F8341D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Persons.Shared.Entities", "Persons\Records.Persons.Shared.Entities\Records.Persons.Shared.Entities.csproj", "{3E237C81-E076-42E4-876F-1DC225536AD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Shared.Entities", "Shared\Records.Shared.Entities\Records.Shared.Entities.csproj", "{D256E781-5900-4931-8852-E94044A3C7DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,6 +62,10 @@ Global
 		{3E237C81-E076-42E4-876F-1DC225536AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E237C81-E076-42E4-876F-1DC225536AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E237C81-E076-42E4-876F-1DC225536AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D256E781-5900-4931-8852-E94044A3C7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D256E781-5900-4931-8852-E94044A3C7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D256E781-5900-4931-8852-E94044A3C7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D256E781-5900-4931-8852-E94044A3C7DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A9B0D132-1D85-4A62-9857-3905FEF76EB5} = {2D7BCDB5-7798-4A35-B8FA-A27762D78780}
@@ -73,5 +79,6 @@ Global
 		{4C3CCF85-B590-4B29-BF1E-6D102519957F} = {2AAE362D-E2EA-4BF8-9031-395294CD5493}
 		{F8341D1C-C42C-49D6-B951-0B67B7025DC2} = {54D5B6F6-1E34-4DED-BBD8-6EF577D8F0E3}
 		{3E237C81-E076-42E4-876F-1DC225536AD1} = {F8341D1C-C42C-49D6-B951-0B67B7025DC2}
+		{D256E781-5900-4931-8852-E94044A3C7DB} = {2D7BCDB5-7798-4A35-B8FA-A27762D78780}
 	EndGlobalSection
 EndGlobal

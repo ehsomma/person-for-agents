@@ -1,47 +1,52 @@
+using Records.Persons.Api.V1.Endpoints;
+using Microsoft.OpenApi;
+
 namespace Records.Persons.Api.V1;
+
+using Records.Shared.Http.DependencyIjection;
 
 public class Program
 {
     public static void Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
+        WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
         builder.Services.AddAuthorization();
 
-        // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-        builder.Services.AddOpenApi();
-
-        var app = builder.Build();
-
-        // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
+        // https://localhost:____/openapi/v1.json
+        // https://localhost:____/swagger
+        // NOTE: No hace falta agregar archivos XML de otros proyectos, los reconoce automáticamente
+        // si el proyecto los genera. Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+        builder.Services.AddOpenApi("v1", options =>
         {
-            app.MapOpenApi();
-        }
+            options.AddDocumentTransformer((doc, ctx, ct) =>
+            {
+                doc.Info = new OpenApiInfo
+                {
+                    Title = "Demo Minimal API",
+                    Version = "v1",
+                    Description = "Mi API minimal documentada",
+                };
+                return Task.CompletedTask;
+            });
+        });
+
+        builder.Services.AddEndpointsApiExplorer(); // Enables API explorer for endpoints.
+
+        WebApplication app = builder.Build();
+
+        ////app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
+        app.UseGlobalExceptionHandler();
+        
+        // Configure the HTTP request pipeline.
+        app.MapOpenApi();
 
         app.UseHttpsRedirection();
-
         app.UseAuthorization();
 
-        var summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-            {
-                var forecast = Enumerable.Range(1, 5).Select(index =>
-                        new WeatherForecast
-                        {
-                            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                            TemperatureC = Random.Shared.Next(-20, 55),
-                            Summary = summaries[Random.Shared.Next(summaries.Length)]
-                        })
-                    .ToArray();
-                return forecast;
-            })
-            .WithName("GetWeatherForecast");
+        // Mapea los endpoints.
+        app.MapPersonasEndpoints();
 
         app.Run();
     }

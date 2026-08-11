@@ -10,4 +10,9 @@
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.10"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Shared\Records.Shared.Http.DependencyIjection\Records.Shared.Http.DependencyIjection.csproj" />
+      <ProjectReference Include="..\Records.Persons.Api.V1.Entities\Records.Persons.Api.V1.Entities.csproj" />
+    </ItemGroup>
+
 </Project>

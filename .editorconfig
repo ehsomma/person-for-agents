@@ -10,11 +10,15 @@ charset = utf-8
 insert_final_newline = true
 #max_line_length = 120
 
-# --- Enciende tod en warning ---
+# --- Enciende todo en warning ---
 # StyleCop (SA) + IDE (code-style) + CA (calidad) a warning por defecto
 dotnet_analyzer_diagnostic.category-StyleCop.severity = warning
 dotnet_analyzer_diagnostic.category-Style.severity = warning
 dotnet_analyzer_diagnostic.category-CodeQuality.severity = warning
+
+
+#### C# Coding Conventions ####
+csharp_using_directive_placement = outside_namespace
 
 
 #### Stylecop.Analyzer (SAxxxx rules) ####

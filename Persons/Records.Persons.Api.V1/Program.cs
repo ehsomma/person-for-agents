@@ -1,9 +1,8 @@
-using Records.Persons.Api.V1.Endpoints;
 using Microsoft.OpenApi;
+using Records.Persons.Api.V1.Endpoints;
+using Records.Shared.Http.DependencyIjection;
 
 namespace Records.Persons.Api.V1;
-
-using Records.Shared.Http.DependencyIjection;
 
 public class Program
 {
@@ -38,7 +37,7 @@ public class Program
 
         ////app.UseMiddleware<GlobalExceptionHandlerMiddleware>();
         app.UseGlobalExceptionHandler();
-        
+
         // Configure the HTTP request pipeline.
         app.MapOpenApi();
 

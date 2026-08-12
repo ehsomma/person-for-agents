@@ -6,19 +6,20 @@ namespace Records.Shared.Http;
 
 public class GlobalExceptionHandlerMiddleware
 {
-    public GlobalExceptionHandlerMiddleware()
+    private readonly RequestDelegate _next;
+
+    public GlobalExceptionHandlerMiddleware(RequestDelegate next)
     {
-        ////_next = next;
+        _next = next;
     }
 
-    public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+    public async Task InvokeAsync(HttpContext context)
     {
         ArgumentNullException.ThrowIfNull(context);
-        ArgumentNullException.ThrowIfNull(next);
 
         try
         {
-            await next(context);
+            await _next(context);
         }
         catch (Exception ex)
         {

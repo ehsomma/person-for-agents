@@ -1,22 +1,25 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi;
 using Records.Persons.Api.V1.Entities;
+using Records.Shared.Entities;
 
 namespace Records.Persons.Api.V1.Endpoints;
-
-using Records.Shared.Entities;
 
 public static class PersonsEndpoints
 {
     public static IEndpointRouteBuilder MapPersonasEndpoints(this IEndpointRouteBuilder app)
     {
         // Crea un grupo de rutas para organizar los endpoints relacionados con un path comun y nombre de grupo.
-        RouteGroupBuilder routeGroup = app.MapGroup("/tests").WithTags("Tests");
+        RouteGroupBuilder routeGroup = app.MapGroup("/persons").WithTags("Persons");
 
-        // GET /test2/{id}/data.
-        // **** Sin lambda, toma la documentación de XML! Con Examples tambien! ****
-        routeGroup.MapGet("/test2/{id}/data", GetTest2Data)
-            .WithName("GetTest2Data")
+        // GET persons/test/{id}/data.
+        routeGroup.MapGet("/test/{id}/data", GetTestData)
+            .WithName("GetTest/newData")
+            .Produces<MyError>(StatusCodes.Status400BadRequest);
+
+        // GET persons/exception1.
+        routeGroup.MapGet("/", GetException1)
+            .WithName("GetException1")
             .Produces<MyError>(StatusCodes.Status400BadRequest);
 
         return app;
@@ -27,8 +30,13 @@ public static class PersonsEndpoints
     /// <param name="id" example="Abc123">ID único del elemento a recuperar.</param>
     /// <response code="200">Éxito: Elemento encontrado.</response>
     /// <response code="400">Request inválido. Devuelve MyError.</response>
-    public static string GetTest2Data(string id, HttpContext httpContext)
+    private static string GetTestData(string id, HttpContext httpContext)
     {
         return "Test 2 API ok";
+    }
+
+    private static IResult GetException1(HttpContext context)
+    {
+        throw new NotImplementedException();
     }
 }

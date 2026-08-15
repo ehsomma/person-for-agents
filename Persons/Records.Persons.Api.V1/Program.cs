@@ -1,5 +1,6 @@
 using Microsoft.OpenApi;
 using Records.Persons.Api.V1.Endpoints;
+using Records.Persons.Shared.Configuration.DependencyInjection;
 using Records.Shared.Http.DependencyIjection;
 
 namespace Records.Persons.Api.V1;
@@ -31,7 +32,11 @@ public class Program
             });
         });
 
-        builder.Services.AddEndpointsApiExplorer(); // Enables API explorer for endpoints.
+        // Enables API explorer for endpoints.
+        builder.Services.AddEndpointsApiExplorer();
+
+        // Registers the necessary configurations with the DI framework.
+        builder.Services.AddConfiguration(builder.Configuration);
 
         WebApplication app = builder.Build();
 

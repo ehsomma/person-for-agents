@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Persons.Shared.Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Shared.Entities", "Shared\Records.Shared.Entities\Records.Shared.Entities.csproj", "{D256E781-5900-4931-8852-E94044A3C7DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Persons.Shared.Configuration.DependencyInjection", "Persons\Records.Persons.Shared.Configuration.DependencyInjection\Records.Persons.Shared.Configuration.DependencyInjection.csproj", "{E07F2D4B-59CE-4190-8A34-0AAE59D439FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +68,10 @@ Global
 		{D256E781-5900-4931-8852-E94044A3C7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D256E781-5900-4931-8852-E94044A3C7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D256E781-5900-4931-8852-E94044A3C7DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E07F2D4B-59CE-4190-8A34-0AAE59D439FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E07F2D4B-59CE-4190-8A34-0AAE59D439FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E07F2D4B-59CE-4190-8A34-0AAE59D439FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E07F2D4B-59CE-4190-8A34-0AAE59D439FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A9B0D132-1D85-4A62-9857-3905FEF76EB5} = {2D7BCDB5-7798-4A35-B8FA-A27762D78780}
@@ -80,5 +86,6 @@ Global
 		{F8341D1C-C42C-49D6-B951-0B67B7025DC2} = {54D5B6F6-1E34-4DED-BBD8-6EF577D8F0E3}
 		{3E237C81-E076-42E4-876F-1DC225536AD1} = {F8341D1C-C42C-49D6-B951-0B67B7025DC2}
 		{D256E781-5900-4931-8852-E94044A3C7DB} = {2D7BCDB5-7798-4A35-B8FA-A27762D78780}
+		{E07F2D4B-59CE-4190-8A34-0AAE59D439FE} = {F8341D1C-C42C-49D6-B951-0B67B7025DC2}
 	EndGlobalSection
 EndGlobal

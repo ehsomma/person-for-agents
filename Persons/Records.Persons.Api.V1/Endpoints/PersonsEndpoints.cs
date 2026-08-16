@@ -1,7 +1,8 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.OpenApi;
-using Records.Persons.Api.V1.Entities;
+#region Usings
+
 using Records.Shared.Entities;
+
+#endregion
 
 namespace Records.Persons.Api.V1.Endpoints;
 
@@ -30,8 +31,12 @@ public static class PersonsEndpoints
     /// <param name="id" example="Abc123">ID único del elemento a recuperar.</param>
     /// <response code="200">Éxito: Elemento encontrado.</response>
     /// <response code="400">Request inválido. Devuelve MyError.</response>
-    private static string GetTestData(string id, HttpContext httpContext)
+    private static string GetTestData(
+        string id,
+        HttpContext httpContext,
+        ILogger<Program> logger)
     {
+        logger.LogWarning("Warning de prueba en GetTestData() para id {Id}", id);
         return "Test 2 API ok";
     }
 

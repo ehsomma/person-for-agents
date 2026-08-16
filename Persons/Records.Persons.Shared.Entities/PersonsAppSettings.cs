@@ -1,3 +1,9 @@
+#region  Usings
+
+using System.ComponentModel.DataAnnotations;
+
+#endregion
+
 namespace Records.Persons.Shared.Entities;
 
 /// <summary>
@@ -15,10 +21,13 @@ public class PersonsAppSettings
     #region Properties
 
     /// <summary>Setting 1 (example).</summary>
+    /// <remarks>Obligatoria: si falta o viene vacía, lanza excepción al cargar.</remarks>
+    [Required(AllowEmptyStrings = false)]
     public string Setting1 { get; set; } = string.Empty;
 
     /// <summary>Setting 2 (example).</summary>
-    public string Setting2 { get; set; } = string.Empty;
+    /// <remarks>Opcional: si no está en el JSON, queda este default.</remarks>
+    public string Setting2 { get; set; } = "valor 2 (default)";
 
     #endregion
 }

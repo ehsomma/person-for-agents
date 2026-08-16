@@ -2,6 +2,7 @@ using Microsoft.OpenApi;
 using Records.Persons.Api.V1.Endpoints;
 using Records.Persons.Shared.Configuration.DependencyInjection;
 using Records.Shared.Http.DependencyIjection;
+using Records.Shared.Serilog.DependencyInjection;
 
 namespace Records.Persons.Api.V1;
 
@@ -10,6 +11,9 @@ public class Program
     public static void Main(string[] args)
     {
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+        // Configures and registers Serilog as the logger.
+        builder.AddSerilogCustom();
 
         // Add services to the container.
         builder.Services.AddAuthorization();
@@ -48,6 +52,8 @@ public class Program
 
         app.UseHttpsRedirection();
         app.UseAuthorization();
+
+        ////app.UseSerilogRequestLogging();
 
         // Mapea los endpoints.
         app.MapPersonasEndpoints();

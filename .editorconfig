@@ -249,3 +249,6 @@ dotnet_diagnostic.SA1208.severity = suggestion
 # NOTE: Suppress this rule in files only that be base clases like Repository with the next justification:
 # "I prefer to use it as field just in protected fields in base classes like Repository base class."
 #dotnet_diagnostic.SA1401.severity = suggestion
+
+# CAxxxx.
+dotnet_diagnostic.CA1848.severity = none

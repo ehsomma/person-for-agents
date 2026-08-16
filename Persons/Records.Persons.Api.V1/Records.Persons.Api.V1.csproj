@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Shared\Records.Shared.Http.DependencyIjection\Records.Shared.Http.DependencyIjection.csproj" />
+      <ProjectReference Include="..\..\Shared\Records.Shared.Serilog.DependencyInjection\Records.Shared.Serilog.DependencyInjection.csproj" />
       <ProjectReference Include="..\Records.Persons.Api.V1.Entities\Records.Persons.Api.V1.Entities.csproj" />
       <ProjectReference Include="..\Records.Persons.Shared.Configuration.DependencyInjection\Records.Persons.Shared.Configuration.DependencyInjection.csproj" />
     </ItemGroup>

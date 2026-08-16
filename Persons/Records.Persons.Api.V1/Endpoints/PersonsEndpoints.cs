@@ -19,7 +19,7 @@ public static class PersonsEndpoints
             .Produces<MyError>(StatusCodes.Status400BadRequest);
 
         // GET persons/exception1.
-        routeGroup.MapGet("/", GetException1)
+        routeGroup.MapGet("/test/exception1", GetException1)
             .WithName("GetException1")
             .Produces<MyError>(StatusCodes.Status400BadRequest);
 
@@ -42,6 +42,10 @@ public static class PersonsEndpoints
 
     private static IResult GetException1(HttpContext context)
     {
-        throw new NotImplementedException();
+        #pragma warning disable CA2201
+        Exception ex = new Exception("Excepción de prueba 1");
+        #pragma warning restore CA2201
+        ex.Data.Add("Id", context.TraceIdentifier);
+        throw ex;
     }
 }

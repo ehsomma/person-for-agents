@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Shared\Records.Shared.Entities\Records.Shared.Entities.csproj" />
+      <ProjectReference Include="..\..\Shared\Records.Shared.Http.Entities\Records.Shared.Http.Entities.csproj" />
       <ProjectReference Include="..\Records.Persons.Shared.Entities\Records.Persons.Shared.Entities.csproj" />
     </ItemGroup>
 </Project>

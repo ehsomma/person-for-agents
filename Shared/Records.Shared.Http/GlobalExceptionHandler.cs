@@ -3,7 +3,7 @@
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Records.Shared.Entities;
+using Records.Shared.Http.Entities;
 
 #endregion
 
@@ -20,9 +20,9 @@ public sealed class GlobalExceptionHandler(
         ArgumentNullException.ThrowIfNull(httpContext);
         ArgumentNullException.ThrowIfNull(exception);
 
-        // TODO: Asignar código http de acuerdo al tipo de excepción.
+        // TODO: Copiar lo mismo que GlobalExceptionHandlerMiddleware de DDD.
         // Ver: https://github.com/ehsomma/ddd-cqrs-microservices/blob/master/Src/Services/Shared/Records.Shared.Infra.Http/Middlewares/GlobalExceptionHandlerMiddleware.cs
-        MyError myError = new MyError()
+        ErrorResponse myError = new ErrorResponse()
         {
             Code = 123,
             Description = exception.Message,

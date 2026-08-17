@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{F8341D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Persons.Shared.Entities", "Persons\Records.Persons.Shared.Entities\Records.Persons.Shared.Entities.csproj", "{3E237C81-E076-42E4-876F-1DC225536AD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Shared.Entities", "Shared\Records.Shared.Entities\Records.Shared.Entities.csproj", "{D256E781-5900-4931-8852-E94044A3C7DB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Shared.Http.Entities", "Shared\Records.Shared.Http.Entities\Records.Shared.Http.Entities.csproj", "{D256E781-5900-4931-8852-E94044A3C7DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Records.Persons.Shared.Configuration.DependencyInjection", "Persons\Records.Persons.Shared.Configuration.DependencyInjection\Records.Persons.Shared.Configuration.DependencyInjection.csproj", "{E07F2D4B-59CE-4190-8A34-0AAE59D439FE}"
 EndProject

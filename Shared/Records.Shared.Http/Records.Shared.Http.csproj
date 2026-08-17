@@ -15,6 +15,6 @@
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
     </ItemGroup>
     <ItemGroup>
-      <ProjectReference Include="..\Records.Shared.Entities\Records.Shared.Entities.csproj" />
+      <ProjectReference Include="..\Records.Shared.Http.Entities\Records.Shared.Http.Entities.csproj" />
     </ItemGroup>
 </Project>

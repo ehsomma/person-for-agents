@@ -1,6 +1,6 @@
 #region Usings
 
-using Records.Shared.Entities;
+using Records.Shared.Http.Entities;
 
 #endregion
 
@@ -16,12 +16,12 @@ public static class PersonsEndpoints
         // GET persons/test/{id}/data.
         routeGroup.MapGet("/test/{id}/data", GetTestData)
             .WithName("GetTest/newData")
-            .Produces<MyError>(StatusCodes.Status400BadRequest);
+            .Produces<ErrorResponse>(StatusCodes.Status400BadRequest);
 
         // GET persons/exception1.
         routeGroup.MapGet("/test/exception1", GetException1)
             .WithName("GetException1")
-            .Produces<MyError>(StatusCodes.Status400BadRequest);
+            .Produces<ErrorResponse>(StatusCodes.Status400BadRequest);
 
         return app;
     }
